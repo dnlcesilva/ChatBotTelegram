@@ -18,7 +18,7 @@ formatter = logging.Formatter("%(asctime)s | %(levelname)-7s | %(message)s")
 fh.setFormatter(formatter)
 logger.addHandler(fh)
 
-TOKEN = "1459207785:AAEGNH4SiP3Xy9IocrZ1LOo3w5IZ48FlGGM"
+TOKEN = "<YOUR-TOKEN>"
 
 
 bot = telebot.TeleBot(TOKEN)
@@ -59,16 +59,12 @@ def send_server(message):
         logger.exception(str(e))
         bot.send_message(message.chat.id, "Error while getting a server status. Check the log for details.")
 
-#print(bot.get_me())
-
 
 @bot.message_handler(commands=['cups'])
 def send_welcome(message):
     statuscups = os.system("systemctl status atd")
     if statuscups == 0:
         bot.reply_to(message," Status do cups OK!! ", parse_mode="Markdown") 
-
-"""
 
 # Handle all other messages with content_type 'text' (content_types defaults to ['text'])
 @bot.message_handler(func=lambda message: True)
@@ -77,37 +73,5 @@ def echo_message(message):
 
 
 print(bot.get_me())
-#lastChatId = message[-1].chat.id
-#print(lastChatID)
 
-# Handles all text messages that contains the commands '/start' or '/help'.
-@bot.message_handler(commands=['start'])
-def send_welcome(message):
-    ls = os.listdir('/tmp')
-    bot.send_message(message.chat.id, "Olá " + message.from_user.first_name + " ,seja bem vindo, em que posso ajudar? Digite /ajuda para mais opções!! ")
-
-    
-    #print(ls)
-
-
-@bot.message_handler(commands=['ajuda'])
-def handle_ajuda(message):
-    bot.send_message(message.chat.id, message.from_user.first_name + ":\nComandos disponíveis: \n"
-                                                                     "df \n"
-                                                                     "ls \n" )
-
-    message = message.text
-    print(message)
-
-# Handles all sent documents and audio files
-@bot.message_handler(content_types=['document', 'audio'])
-def handle_docs_audio(message):
-	pass
-
-# Handles all text messages that match the regular expression
-@bot.message_handler(regexp="SOME_REGEXP")
-def handle_message(message):
-	pass
-
-"""
 bot.polling()
