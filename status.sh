@@ -2,19 +2,19 @@
 
 scrps_path=/home/danilo/Documents/ProjetosPython
 
-#info_web="*Web-servers*
-#----------------------
-#$(service apache2 status | sed -r "s/[*]+/-/g")
-#$(service nginx status | sed -r "s/[*]+/-/g")
+info_web="*Web-servers*
+----------------------
+$(service apache2 status | sed -r "s/[*]+/-/g")
+$(service nginx status | sed -r "s/[*]+/-/g")
 
-#"
+"
 
-#info_mysql="*MySQL*
-#----------------------
-#$(mysqladmin ping)
-#$(mysqladmin status)
+info_mysql="*MySQL*
+----------------------
+$(mysqladmin ping)
+$(mysqladmin status)
 
-#"
+"
 
 info_cpu="*CPU*
 ----------------------
