@@ -49,9 +49,9 @@ def send_help(message):
 def send_server(message):
     try:
         lsdir = os.listdir("/home")
-        # path to script that gathers server info
+        #caminho do arquivo .sh
         call(["/home/danilo/Documents/ProjetosPython/status.sh"])
-        # read the file with results
+        # lendo o arquivo de texto
         status = open("/home/danilo/Documents/ProjetosPython/status.txt", "rb").read()
         bot.send_message(message.chat.id, status, parse_mode="Markdown")
         bot.send_message(message.chat.id, lsdir, parse_mode="Markdown")
