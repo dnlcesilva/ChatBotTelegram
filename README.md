@@ -18,11 +18,15 @@ Criação do Chat bot no telegram e pegando o TOKEN
 
 4 - Insira um username. O username obrigatoriamente tem que terminar com a palavra bot. Ex: Huggybot, Huggy_bot.
 
-![Screenshot](/img/userbot.png)
+<p align="center">
+  <img src="/img/userbot.png" width="350" title="hover text">
+</p>
 
 5 - Feito isso, você receberá um Token. Ele será usado para a integração com a Huggy;
 
-![Screenshot](/img/tokenbot.png)
+<p align="center">
+  <img src="/img/tokenbot.png" width="350" title="hover text">
+</p>
 
 6 - Por fim, alimente o bot de forma a inserir os comandos desejados.
 
